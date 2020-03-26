@@ -149,8 +149,26 @@ int main()
         printf("\n\nSequence number of the column with all odd numbers: %d\n", all_odd_iN);
     else
         printf("\n\nThere is no column with all odd numbers!");
+        
 
-
+    printf("\n6.\n");
+    printf("\nCommon lines    ");
+    for(i = 0; i < M; i++)
+        for(j = i + 1; j < M; j++)
+        {
+            for(k = 0, com_line = 1; k < N; k++)
+                if(a[i][k] != a[j][k])
+                {
+                    com_line = 0;
+                }
+            if(com_line == 1)
+            {
+                printf("YES\n");
+                goto com_lines_i_end;
+            }
+        }
+    printf("NO\n");
+    com_lines_i_end:
 
     return 0;
 }
